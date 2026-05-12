@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     optimize();
-    int n;
+    int n,cnt=0;
     cin>>n;
     int a[n];
     for(int i=0;i<n;i++)
@@ -13,15 +13,15 @@ int main()
         cin>>a[i];
     }
 
-   // sort(a+0,a+n,greater<int> ());
-    reverse(a+0,a+n);
-
-    for(int i=0;i<n;i++)
+    sort(a,a+n);
+    for(int i=0;i<n-1;i++)
     {
-        cout<<a[i]<<" ";
-
+        if(a[i]!=a[i+1])
+        {
+            cnt++;
+        }
     }
-    cout<<endl;
+    cout<<cnt+1<<endl;
 
     return 0;
 }
